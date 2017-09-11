@@ -1,0 +1,31 @@
+rootProject.ext {
+
+    supportVersion = '25.3.1'
+    appCompatVersion = supportVersion
+    daggerVersion = '2.8'
+    daggerCompilerVersion = daggerVersion
+
+    espressoVersion = '2.2.2'
+    junitVersion = '4.12'
+
+    uiDependencies = [
+            appCompat:
+                    "com.android.support:appcompat-v7:$appCompatVersion"
+    ]
+
+    domainDependencies = [
+            dagger        :
+                    "com.google.dagger:dagger:$daggerVersion",
+            daggerCompiler:
+                    "com.google.dagger:dagger-compiler:$daggerCompilerVersion",
+            kotlinStdlib         :
+                    "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    ]
+
+    testingDependencies = [
+            junit   :
+                    "junit:junit:$junitVersion",
+            espresso:
+                    "com.android.support.test.espresso:espresso-core:$espressoVersion"
+    ]
+}

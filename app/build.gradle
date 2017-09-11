@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: '../android_commons.gradle'
+apply from: '../android_dependencies.gradle'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.jcminarro.kleanactivityforresult"
-        minSdkVersion 16
-        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -21,14 +21,25 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+
+    def uiDependencies = rootProject.ext.uiDependencies
+    def domainDependencies = rootProject.ext.domainDependencies
+    def testingDependencies = rootProject.ext.testingDependencies
+
+    kapt domainDependencies.daggerCompiler
+
+    compile uiDependencies.appCompat
+
+    compile domainDependencies.dagger
+    compile domainDependencies.kotlinStdlib
+
+    testCompile testingDependencies.junit
+
+    androidTestCompile(testingDependencies.espresso, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
+
 repositories {
     mavenCentral()
 }
