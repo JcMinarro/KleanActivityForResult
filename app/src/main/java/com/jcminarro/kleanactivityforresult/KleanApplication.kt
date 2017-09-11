@@ -6,12 +6,12 @@ import com.jcminarro.kleanactivityforresult.di.component.DaggerAppComponent
 import com.jcminarro.kleanactivityforresult.di.module.AppModule
 
 class KleanApplication: Application() {
-    private lateinit var component: AppComponent
+    private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
-        component = DaggerAppComponent.builder().appModule(AppModule(this)).build()
+        appComponent = DaggerAppComponent.builder().appModule(AppModule(this)).build()
     }
 
-    fun getAppComponent(): AppComponent = component
+    fun getAppComponent(): AppComponent = appComponent
 }
