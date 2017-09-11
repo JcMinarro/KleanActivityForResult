@@ -18,7 +18,7 @@
         >
 
         <AutoCompleteTextView
-            android:id="@+id/cardNumber"
+            android:id="@+id/tvCardNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/card_number"
@@ -40,7 +40,7 @@
             >
 
             <AutoCompleteTextView
-                android:id="@+id/expireDate"
+                android:id="@+id/tvExpireDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/expire_date"
@@ -55,6 +55,7 @@
             >
 
             <AutoCompleteTextView
+                android:id="@+id/tvCvv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/cvv"
