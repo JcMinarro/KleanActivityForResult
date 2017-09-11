@@ -21,6 +21,7 @@ class InsertCardActivity : AppCompatActivity(), InsertCardPresenter.View {
         setContentView(R.layout.activity_insert_card)
         setSupportActionBar(toolbar)
         scanButton.setOnClickListener { insertCardPresenter.onScanCard() }
+        insertCardPresenter.view = this
     }
 
     private fun initDI() {
