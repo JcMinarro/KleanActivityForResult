@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply from: '../android_commons.gradle'
 apply from: '../android_dependencies.gradle'
@@ -38,6 +39,8 @@ dependencies {
     androidTestCompile(testingDependencies.espresso, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.3.1'
 }
 
 repositories {
