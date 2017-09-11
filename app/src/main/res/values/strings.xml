@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Klean Activity For Result</string>
+    <string name="title_activity_insert_card">InsertCardActivity</string>
+    <string name="card_number">Card Number</string>
+    <string name="expire_date">Expire Date</string>
+    <string name="cvv">CVV</string>
 </resources>
