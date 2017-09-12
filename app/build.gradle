@@ -19,6 +19,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    testOptions.unitTests.all {
+        testLogging {
+            events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+        }
+    }
 }
 
 dependencies {
@@ -38,6 +44,8 @@ dependencies {
     compile domainDependencies.kotlinStdlib
 
     testCompile testingDependencies.junit
+    testCompile testingDependencies.mockitoKotlin
+    testCompile testingDependencies.kluent
 
     androidTestCompile(testingDependencies.espresso, {
         exclude group: 'com.android.support', module: 'support-annotations'

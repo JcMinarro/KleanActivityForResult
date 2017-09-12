@@ -10,6 +10,8 @@ rootProject.ext {
 
     espressoVersion = '2.2.2'
     junitVersion = '4.12'
+    kluentVersion = '1.28'
+    mockitoKotlinVersion = '1.5.0'
 
     uiDependencies = [
             appCompat:
@@ -35,6 +37,10 @@ rootProject.ext {
             junit   :
                     "junit:junit:$junitVersion",
             espresso:
-                    "com.android.support.test.espresso:espresso-core:$espressoVersion"
+                    "com.android.support.test.espresso:espresso-core:$espressoVersion",
+            kluent         :
+                    "org.amshove.kluent:kluent:$kluentVersion",
+            mockitoKotlin   :
+                    "com.nhaarman:mockito-kotlin:$mockitoKotlinVersion"
     ]
 }
