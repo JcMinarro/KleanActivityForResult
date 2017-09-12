@@ -2,15 +2,24 @@ rootProject.ext {
 
     supportVersion = '25.3.1'
     appCompatVersion = supportVersion
+    designVersion = supportVersion
     daggerVersion = '2.8'
     daggerCompilerVersion = daggerVersion
+    constraintLayoutVersion = '1.0.2'
+    ioCardVersion = '5.5.0'
 
     espressoVersion = '2.2.2'
     junitVersion = '4.12'
 
     uiDependencies = [
             appCompat:
-                    "com.android.support:appcompat-v7:$appCompatVersion"
+                    "com.android.support:appcompat-v7:$appCompatVersion",
+            design:
+                    "com.android.support:design:$designVersion",
+            constraintLayout:
+                    "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+            ioCard   :
+                    "io.card:android-sdk:$ioCardVersion"
     ]
 
     domainDependencies = [
